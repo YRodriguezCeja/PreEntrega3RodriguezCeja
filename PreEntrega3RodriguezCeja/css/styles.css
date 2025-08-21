@@ -1,0 +1,562 @@
+/*mis comentarios*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* colores de la pagina, black: #222831  grey: #393e46  beige Dark: #948979 biege: #dfd0b8*/
+
+/* RESET BASICO============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MIS TIPOGRAFIAS========================== */
+body {
+    font-family: 'Segoe UI','Baskerville', 'Merriweather', 'Playfair' ;
+    background-color: #222831;
+    color: #333;
+}
+
+/* INICIA DISEÑO NAVBAR ===================== */
+.navbar{
+    padding: 2rem;
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 20px 40px;
+    border-bottom: 4px solid #b89f65; /* MI DORADO INSTITUCIONAL */
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo span {
+    color: #b89f65; /* dorado */
+}
+
+
+
+/* SECCION MAIN DE PAGINA PRINICIPAL ============== */
+.section-intro {
+    background: url(../assets/img/temis-fondo.jpg) center/cover no-repeat;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-content {
+    display: flex;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.652);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.066);
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.ball-image {
+    max-width: 250px;
+    height: auto;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text p {
+    font-family: 'Playfair';
+    color: #1c1c1c;
+    font-size:medium;
+    margin-bottom: 15px;
+    margin-top: 55px;
+    text-align: justify;
+}
+
+/*  SECCION DE PAGINA DE CONTACTO ======================= */
+.info-despacho {
+    display: flex;
+    gap: 25px;
+    align-items: stretch; /*hace que mi mapa y la imgane con tecto tengan la misma altura */
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+/* ESTE ES MI ESTILO GENERAL DE LOS DOS CONTENEDORS DE LA SECCION*/
+.contenedor-img-texto, 
+.mapa {
+    flex: 1 1 45%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* DANDO DINAMISMO CON HOVER A MIS CONTENEDORES*/
+.contenedor-img-texto:hover, 
+.mapa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ESTILO DE LA IMAGEN */
+.contenedor-img-texto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* ESTILO DEL TEXTO */
+.contenedor-img-texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ESTILO DEL MAPA */
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ESTILO Y FONDO DE SECCION FORM */
+.formulario-contacto form {
+    position: relative;
+    background-image: url(../assets/img/temis-fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: #f5f5f5;
+    font-family: 'Segoe UI','Baskerville', 'Merriweather', 'Playfair';
+}
+
+/* DEGRADADO OSCURO PARA MEJOR APARIENCIA */
+.formulario-contacto form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(30,30,30,0.85));
+    z-index: 0;
+    transition: background 0.5s ease;
+}
+
+/* CONTENIDO DE LA CAPA */
+.formulario-contacto form > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* TITULO DEL FORMULARIO */
+.formulario-contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #b89f65; /* dorado suave */
+    
+}
+
+/* MIS LABELS */
+.formulario-contacto label {
+    font-weight: 600;
+    color: #e0e0e0;
+    letter-spacing: 0.03em;
+}
+
+/* IINPUT, SELECT Y TEXT AREA */
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* FOCUS PARA EFECTOS ELEGANTES EN PRUEBA */
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #b89f65;
+    transform: scale(1.03);
+}
+
+/* BOTON ENVIAR CON ANIMACION */
+.formulario-contacto button {
+    background: white;
+    color: #222;
+    font-weight: 700;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 1.1px;
+    transition: transform 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+    background: #b89f65;
+    transform: scale(1.05);
+}
+
+
+/* ======= DECCION MAIN DE EMPRESAS ======= */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* EVENTOS EN TARJETAS */
+.info-item {
+    background-color: #fafafa;
+    border-left: 6px solid #b89f65;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* IMAGENES DE TARJETAS */
+.info-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* TITULOS DE LAS TARJETAS */
+.info-item h2 {
+    margin-top: 0;
+    color: #0077cc;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Texto */
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* ======= DECCION MAIN DE EVENTOS ================== */
+.grid-event {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* CONTENEDOR DEL VIDEO Y TEXTO DE APOYO============ */
+.video-texto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.video-container {
+    flex: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 3px;
+    border: none;
+}
+
+.texto-video {
+    flex: 1 1 50%;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* GALERIA DE TARJETAS DE EVENTOS */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.img-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.img-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.img-card p {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+/* ======= DECCION MAIN DE FINIQUITOS ======= */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* SECCION DE TEXTO E IMAGEN*/
+.finiquito {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.finiquito img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.finiquito-texto {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* FORMULARIO DEL FINIQUITO */
+.formulario-finiquito form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario-finiquito h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #004085;
+}
+
+.formulario-finiquito label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.formulario-finiquito input,
+.formulario-finiquito select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-finiquito input:focus,
+.formulario-finiquito select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.formulario-finiquito button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.formulario-finiquito button:hover {
+    background-color: #b89f65;
+}
+
+
+/* =========== FOOTER ============ */
+footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5px; /*define el espacio de sparacion entre el contenido del footer*/
+}
+
+.redes a, .pagos {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.redes :hover, .pagos :hover {
+    color: #b89f65;
+}
+
+h5 {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+
+/*=====================INICIA EL APARTADO RESPONSIVO ===================*/
+
+/*================== ADAPTABLE RESPONSIVO NAVBAR=============== */
+@media screen  and (max-width: 767px) {
+    .navbar-brand{
+        display: none;
+    }
+    
+}
+
+/* ======= RESPONSIVE DE PAGINA PRINCIPAL =======  */
+@media (max-width: 768px) {
+    .header-container,
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar .nav-list {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+}
+
+
+
+/* =================RESPONSIVE EMPRESAS ======================== */
+@media (max-width: 768px) {
+    .video-texto {
+    flex-direction: column;
+}
+
+    .texto-video,
+    .video-container {
+    flex: 1 1 100%;
+}
+}
+
+
+/* =================RESPONSIVE CONTACTO ========================= */
+@media (max-width: 768px) {
+    .contenedor-img-texto {
+    flex-direction: column;
+    text-align: center;
+}
+/* Responsivo */
+@media (max-width: 768px) {
+    .info-despacho {
+        flex-direction: column;
+    }
+    
+    .contenedor-img-texto, 
+    .mapa {
+        flex: 1 1 100%;
+    }
+}
+
+    .formulario-contacto form {
+    padding: 1.5rem;
+}
+}
+
+
+/* RESPONSIVO DE EVENTOS Y TARJETAS */
+@media (max-width: 600px) {
+    .info-grid {
+    padding: 1rem;
+    }
+
+    .info-item {
+    padding: 1rem;
+    }
+}
+
+
+
+/* ===============RESPONSIVE FINIQUITOS=========================*/
+@media (max-width: 768px) {
+    .finiquito {
+    flex-direction: column;
+    text-align: center;
+    }
+
+    .formulario-finiquito form {
+    padding: 1.5rem;
+    }
+}
