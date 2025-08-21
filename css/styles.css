@@ -31,6 +31,10 @@ body {
     justify-content: space-between;
 }
 
+.navbar-brand img {
+    width: 50px;
+}
+
 .titulo span {
     color: #b89f65; /* dorado */
 }
@@ -456,6 +460,7 @@ footer {
     font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s;
+    text-decoration: none; /* quita adornos a los logos de las redes sociales */
 }
 
 .redes :hover, .pagos :hover {
@@ -501,62 +506,38 @@ h5 {
 
 /* =================RESPONSIVE EMPRESAS ======================== */
 @media (max-width: 768px) {
-    .video-texto {
-    flex-direction: column;
+    .video-texto, /* responsive de video empresas */
+    .contenedor-img-texto, /* responsive de imagen contacto */
+    .info-despacho,
+    .finiquito { 
+        flex-direction: column;
 }
 
     .texto-video,
-    .video-container {
-    flex: 1 1 100%;
-}
-}
-
-
-/* =================RESPONSIVE CONTACTO ========================= */
-@media (max-width: 768px) {
-    .contenedor-img-texto {
-    flex-direction: column;
-    text-align: center;
-}
-/* Responsivo */
-@media (max-width: 768px) {
-    .info-despacho {
-        flex-direction: column;
-    }
-    
+    .video-container,
     .contenedor-img-texto, 
     .mapa {
         flex: 1 1 100%;
-    }
 }
 
-    .formulario-contacto form {
+    .contenedor-img-texto,
+    .finiquito {
+        text-align: center;
+}
+    .formulario-contacto form,
+    .formulario-finiquito form { /* formulario de contacto*/
     padding: 1.5rem;
 }
 }
-
 
 /* RESPONSIVO DE EVENTOS Y TARJETAS */
 @media (max-width: 600px) {
     .info-grid {
     padding: 1rem;
+    grid-template-columns: 100%;
     }
 
     .info-item {
     padding: 1rem;
-    }
-}
-
-
-
-/* ===============RESPONSIVE FINIQUITOS=========================*/
-@media (max-width: 768px) {
-    .finiquito {
-    flex-direction: column;
-    text-align: center;
-    }
-
-    .formulario-finiquito form {
-    padding: 1.5rem;
     }
 }
