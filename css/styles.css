@@ -483,60 +483,52 @@ h5 {
     
 }
 
-/* ======= RESPONSIVE DE PAGINA PRINCIPAL =======  */
+/* ======= breakpoint de 768px y gap =======  */
 @media (max-width: 768px) {
-    .header-container,
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navbar .nav-list {
-        flex-direction: column;
+        .navbar .nav-list {
         gap: 10px;
         margin-top: 10px;
     }
-
     .hero-image {
         max-width: 80%;
     }
 }
 
-
-
-/* =================RESPONSIVE EMPRESAS ======================== */
+/* =================breakpoint de 768px ======================== */
 @media (max-width: 768px) {
-    .video-texto, /* responsive de video empresas */
-    .contenedor-img-texto, /* responsive de imagen contacto */
+    .video-texto, 
+    .contenedor-img-texto, 
     .info-despacho,
-    .finiquito { 
+    .finiquito,
+    .header-container,
+    .hero-content,
+    .navbar .nav-list { 
         flex-direction: column;
 }
-
     .texto-video,
     .video-container,
     .contenedor-img-texto, 
     .mapa {
         flex: 1 1 100%;
 }
-
     .contenedor-img-texto,
-    .finiquito {
+    .finiquito,
+    .header-container,
+    .hero-content {
         text-align: center;
 }
     .formulario-contacto form,
-    .formulario-finiquito form { /* formulario de contacto*/
+    .formulario-finiquito form { 
     padding: 1.5rem;
 }
 }
 
-/* RESPONSIVO DE EVENTOS Y TARJETAS */
+/* ==================RESPONSIVO DE EVENTOS Y TARJETAS ==============*/
 @media (max-width: 600px) {
     .info-grid {
     padding: 1rem;
     grid-template-columns: 100%;
     }
-
     .info-item {
     padding: 1rem;
     }
