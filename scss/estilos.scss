@@ -1,0 +1,595 @@
+/* ---------- IMPORTACION DE FUENTES -----*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/*------------INICIAN VARIABLES--------------*/
+
+/*COLORES BASE---*/
+$color-black: #222831;
+$color-grey: #393e46;
+$color-beige-dark: #948979;
+$color-beige: #dfd0b8;
+$color-gold: #b89f65;
+$color-white: #ffffff;
+$color-dark: #1c1c1c;
+$color-text: #333;
+$color-blue: #0077cc;
+$color-blue-strong: #004085;
+$color-blue-btn: #007bff;
+
+/* MIXINS*/
+@mixin border-radius($radius: 12px) {
+    border-radius: $radius;
+    overflow: hidden;
+}
+
+@mixin box-shadow($x: 0, $y: 4px, $blur: 10px, $color: rgba(0,0,0,0.1)) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($props: all, $duration: 0.3s, $ease: ease) {
+    transition: $props $duration $ease;
+}
+
+@mixin dark-overlay($start: rgba(0,0,0,0.6), $end: rgba(30,30,30,0.85)) {
+    background: linear-gradient(135deg, $start, $end);
+}
+
+/*FUENTES*/
+$font-main: 'Segoe UI','Baskerville', 'Merriweather', 'Playfair';
+$font-alt: 'Playfair', serif;
+
+/*SOMBRAS TARJETAS*/
+$shadow-light: 0 4px 10px rgba(0,0,0,0.1);
+$shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+$shadow-strong: 0 8px 20px rgba(0,0,0,0.25);
+
+/*BREAKPOINTS*/
+$bp-small: 576px;   // Móviles
+$bp-medium: 768px;  // Tablets
+$bp-large: 992px;   // Escritorio mediano
+$bp-xlarge: 1200px; // Escritorio grande
+
+
+
+
+
+
+
+
+
+/* RESET DE CSS------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*TIPOGRAFIAS Y BODY ------*/ 
+body {
+    font-family: $font-main;
+    background-color: $color-black;
+    color: $color-text;
+}
+
+/* FORMATO NAVBAR-------*/
+.navbar {
+    padding: 20px 40px;
+    background-color: $color-dark;
+    color: $color-white;
+    border-bottom: 4px solid $color-gold;
+
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+            .brand-title {
+                display: flex;
+                align-items: center;
+
+                .navbar-brand {
+                    margin-right: 5px;
+
+                    img {
+                    width: 50px;
+                    }
+                }
+
+                .titulo {
+                    margin: 0;
+                    font-size: 2.5rem;
+                    /* @include gold-text; */
+
+                    span {
+                    color: $color-gold;
+                    }
+                }
+                
+            }
+
+        // Toggle en moviles
+        .navbar-toggler {
+        order: -1; // Lo coloca a la izquierda
+        }
+
+        .collapse {
+            display: flex;
+            justify-content: flex-end;
+
+            .navbar-nav {
+                display: flex;
+                align-items: center;
+
+                li + li {
+                    margin-left: 20px; // Espaciado entre links
+                }
+
+                .nav-link {
+                    font-size: 1.2rem;
+                    color: $color-white;
+                    @include transition(color);
+
+                    &:hover {
+                        color: $color-gold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*SECCION PAGINA INDEX---------*/
+.section-intro{
+    background: url(../assets/img/temis-fondo.jpg) center/cover no-repeat; /*modificar imagen para salga completa*/
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .intro-content{
+        display: flex;
+        gap: 15px;
+        background-color: rgba(255, 255, 255, 0.652);
+        padding: 30px;
+        @include border-radius(12px);
+        @include box-shadow(0,0,20px, rgba(0,0,0,0.066));
+        max-width: 1200px;
+        flex-wrap: wrap;
+        .ball-image{
+            max-width: 250px;
+            height: auto;
+        }
+        .intro-text {
+            flex: 1;
+            p{
+                font-family: $font-alt;
+                color: $color-dark;
+                font-size: medium;
+                margin: 55px 0 15px; /*se concentran el bottom, top y los costados */
+                text-align: justify;
+            }
+        }
+    }
+}
+
+/*SECCION DE CONTACTO------------*/
+.info-despacho{
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.contenedor-img-texto, 
+.map{
+    flex: 1 1 45%;
+    background: $color-white;
+    padding: 20px;
+    @include border-radius(12px);
+    @include box-shadow();
+    @include transition(transform, 0.2s);
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    p{
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: $color-text;
+    }
+}
+
+.mapa iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* ESTILO DEL FORMULARIO DE CONTACTO---------*/
+.formulario-contacto {
+    form {
+        position: relative;
+        background-image: url(../assets/img/temis-fondo.jpg);
+        background-size: cover;
+        background-position: center;
+        padding: 2.5rem 3rem;
+        @include border-radius(20px);
+        @include box-shadow(0,8px,20px, rgba(0,0,0,0.25));
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        color: #f5f5f5;
+        font-family: $font-main;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            @include border-radius(20px);
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(30,30,30,0.85));
+            z-index: 0;
+            @include transition(background, 0.5s);
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: $color-gold;
+        }
+
+        label {
+            font-weight: 600;
+            color: $color-white;
+            letter-spacing: 0.03em;
+        }
+
+        input,
+        select,
+        textarea {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: $color-black;
+            border: none;
+            @include border-radius(12px);
+            padding: 0.9rem 1rem;
+            font-size: 1rem;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 10px $color-gold;
+                transform: scale(1.03);
+            }
+        }
+
+        button {
+            background: $color-white;
+            color: $color-black;
+            font-weight: 700;
+            padding: 1rem 0;
+            border: none;
+            @include border-radius(14px);
+            font-size: 1.1rem;
+            cursor: pointer;
+            @include transition(transform);
+
+            &:hover {
+                background: $color-gold;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+/*SECCION DE EMPRESAS-----------*/
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: $shadow-medium;
+
+    .info-item {
+        background-color: #fafafa;
+        border-left: 6px solid $color-gold;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: $color-blue;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin: 0;
+            font-size: 1rem;
+            color: $color-text;
+        }
+    }
+}
+
+/* SECCION DE EVENTOS---------*/
+.grid-event {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.video-texto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    background-color: $color-white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: $shadow-medium;
+
+    .video-container {
+        flex: 100%;
+
+        iframe {
+        width: 100%;
+        height: 315px;
+        border-radius: 3px;
+        border: none;
+        }
+    }
+
+    .texto-video {
+        flex: 1 1 50%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    .img-card {
+        background-color: $color-white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        p {
+            padding: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+    }
+}
+
+/*SECCION DE FINIQUITOS*/
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.finiquito {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    background-color: $color-white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: $shadow-light;
+
+    img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .finiquito-texto {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+.formulario-finiquito {
+    form {
+        background-color: $color-white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: $shadow-light;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+            h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: $color-blue-strong;
+            }
+
+            label {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            }
+
+            input,
+            select {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            transition: border-color 0.3s ease;
+
+                &:focus {
+                    border-color: $color-blue-btn;
+                    outline: none;
+                }
+            }
+
+    button {
+        background-color: $color-blue-btn;
+        color: $color-white;
+        padding: 0.9rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+
+            &:hover {
+                background-color: $color-gold;
+            }
+        }
+    }
+}
+
+/* SECCION DE FOOTER-------------*/
+footer {
+    background-color: $color-dark;
+    color: $color-white;
+    padding: 30px 40px;
+    text-align: center;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .redes a,
+    .pagos {
+        color: $color-white;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: color 0.3s;
+        text-decoration: none;
+
+        &:hover {
+        color: $color-gold;
+        }
+    }
+
+    h5 {
+        font-size: 0.9rem;
+        margin-top: 20px;
+    }
+}
+
+/*SECCION RESPONSIVA------------*/
+@media (max-width: $bp-medium) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media (max-width: $bp-medium) {
+    .navbar 
+    .nav-list {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+
+    .video-texto,
+    .contenedor-img-texto,
+    .info-despacho,
+    .finiquito,
+    .header-container,
+    .hero-content,
+    .navbar .nav-list {
+        flex-direction: column;
+    }
+
+    .texto-video,
+    .video-container,
+    .contenedor-img-texto,
+    .mapa {
+        flex: 1 1 100%;
+    }
+
+    .contenedor-img-texto,
+    .finiquito,
+    .header-container,
+    .hero-content {
+        text-align: center;
+    }
+
+    .formulario-contacto form,
+    .formulario-finiquito form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: $bp-small) {
+    .info-grid {
+        padding: 1rem;
+        grid-template-columns: 100%;
+    }
+
+    .info-item {
+        padding: 1rem;
+    }
+}
