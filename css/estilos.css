@@ -3,6 +3,24 @@
 /*------------INICIAN VARIABLES--------------*/
 /*COLORES BASE---*/
 /* MIXINS*/
+/*EXTEND PARA BOTONES DE FORMULARIOS*/
+.formulario-finiquito form button, .formulario-contacto form button {
+  background-color: #222831;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 1rem;
+}
+.formulario-finiquito form button:hover, .formulario-contacto form button:hover {
+  background-color: #b89f65;
+}
+
 /*FUENTES*/
 /*SOMBRAS TARJETAS*/
 /*BREAKPOINTS*/
@@ -65,7 +83,7 @@ body {
   margin-left: 20px;
 }
 .navbar .container-fluid .collapse .navbar-nav .nav-link {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #ffffff;
   transition: color 0.3s ease;
 }
@@ -74,26 +92,43 @@ body {
 }
 
 /*SECCION PAGINA INDEX---------*/
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 .section-intro {
-  background: url(../assets/img/temis-fondo.jpg) center/cover no-repeat; /*modificar imagen para salga completa*/
+  background: url(../assets/img/temis-fondo.jpg); /*modificar imagen para salga completa*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 60px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 .section-intro .intro-content {
   display: flex;
-  gap: 15px;
-  background-color: rgba(255, 255, 255, 0.652);
-  padding: 30px;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.733);
+  padding: 30px 10px 30px;
+  margin: 30px 10px 30px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.066);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.041);
   max-width: 1200px;
   flex-wrap: wrap;
 }
 .section-intro .intro-content .ball-image {
-  max-width: 250px;
+  max-width: auto;
   height: auto;
 }
 .section-intro .intro-content .intro-text {
@@ -102,9 +137,11 @@ body {
 .section-intro .intro-content .intro-text p {
   font-family: "Playfair", serif;
   color: #1c1c1c;
-  font-size: medium;
-  margin: 55px 0 15px; /*se concentran el bottom, top y los costados */
+  font-size: 28px;
+  margin: 10px;
+  padding: 10px;
   text-align: justify;
+  background-size: auto;
 }
 
 /*SECCION DE CONTACTO------------*/
@@ -119,7 +156,7 @@ body {
 .contenedor-img-texto,
 .map {
   flex: 1 1 45%;
-  background: #ffffff;
+  background: #393e46;
   padding: 20px;
   border-radius: 12px;
   overflow: hidden;
@@ -141,9 +178,9 @@ body {
 }
 .contenedor-img-texto p,
 .map p {
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   line-height: 1.6;
-  color: #333;
+  color: #b89f65;
 }
 
 .mapa iframe {
@@ -169,22 +206,14 @@ body {
   gap: 1.2rem;
   color: #f5f5f5;
   font-family: "Segoe UI", "Baskerville", "Merriweather", "Playfair";
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
 }
-.formulario-contacto form::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(30, 30, 30, 0.85));
-  z-index: 0;
-  transition: background 0.5s ease;
-}
-.formulario-contacto form > * {
+.formulario-contacto form * {
   position: relative;
   z-index: 1;
 }
 .formulario-contacto form h2 {
+  text-align: center;
   font-size: 2rem;
   margin-bottom: 0.8rem;
   font-weight: 700;
@@ -193,8 +222,9 @@ body {
 }
 .formulario-contacto form label {
   font-weight: 600;
-  color: #ffffff;
+  color: #b89f65;
   letter-spacing: 0.03em;
+  font-size: 1.2rem;
 }
 .formulario-contacto form input,
 .formulario-contacto form select,
@@ -205,33 +235,9 @@ body {
   border-radius: 12px;
   overflow: hidden;
   padding: 0.9rem 1rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.formulario-contacto form input:focus,
-.formulario-contacto form select:focus,
-.formulario-contacto form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px #b89f65;
-  transform: scale(1.03);
-}
-.formulario-contacto form button {
-  background: #ffffff;
-  color: #222831;
-  font-weight: 700;
-  padding: 1rem 0;
-  border: none;
-  border-radius: 14px;
-  overflow: hidden;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.formulario-contacto form button:hover {
-  background: #b89f65;
-  transform: scale(1.05);
-}
-
 /*SECCION DE EMPRESAS-----------*/
 .info-grid {
   display: grid;
@@ -244,7 +250,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .info-grid .info-item {
-  background-color: #fafafa;
+  background-color: #393e46;
   border-left: 6px solid #b89f65;
   padding: 1.5rem;
   border-radius: 0.75rem;
@@ -263,14 +269,14 @@ body {
 }
 .info-grid .info-item h2 {
   margin-top: 0;
-  color: #0077cc;
-  font-size: 1.25rem;
+  color: #b89f65;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
 .info-grid .info-item p {
   margin: 0;
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 /* SECCION DE EVENTOS---------*/
@@ -285,7 +291,7 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   align-items: flex-start;
-  background-color: #ffffff;
+  background-color: #393e46;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -301,8 +307,9 @@ body {
 }
 .video-texto .texto-video {
   flex: 1 1 50%;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
+  color: #b89f65;
 }
 
 .galeria {
@@ -311,7 +318,7 @@ body {
   gap: 1.5rem;
 }
 .galeria .img-card {
-  background-color: #ffffff;
+  background-color: #393e46;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -330,8 +337,8 @@ body {
 .galeria .img-card p {
   padding: 1rem;
   font-size: 0.95rem;
-  line-height: 1.5;
-  color: #555;
+  line-height: 1.8;
+  color: #b89f65;
 }
 
 /*SECCION DE FINIQUITOS*/
@@ -349,7 +356,7 @@ main {
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #393e46;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -362,27 +369,35 @@ main {
 }
 .finiquito .finiquito-texto {
   flex: 1;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
+  color: #b89f65;
 }
 
 .formulario-finiquito form {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
+  position: relative;
+  background-image: url(../assets/img/temis-fondo.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
 }
 .formulario-finiquito form h2 {
   margin-top: 0;
-  font-size: 1.5rem;
-  color: #004085;
+  font-size: 2.1rem;
+  color: #b89f65;
+  text-align: center;
 }
 .formulario-finiquito form label {
   font-weight: 600;
   margin-bottom: 0.3rem;
+  color: #b89f65;
+  font-size: 1.5rem;
 }
 .formulario-finiquito form input,
 .formulario-finiquito form select {
@@ -398,26 +413,11 @@ main {
   border-color: #007bff;
   outline: none;
 }
-.formulario-finiquito form button {
-  background-color: #007bff;
-  color: #ffffff;
-  padding: 0.9rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-.formulario-finiquito form button:hover {
-  background-color: #b89f65;
-}
-
 /* SECCION DE FOOTER-------------*/
 footer {
   background-color: #1c1c1c;
   color: #ffffff;
-  padding: 30px 40px;
+  padding: 1rem;
   text-align: center;
 }
 footer .footer-container {
