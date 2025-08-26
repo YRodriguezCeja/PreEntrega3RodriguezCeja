@@ -1,0 +1,24 @@
+# Node modules (si usas Node.js para herramientas como npm o vite)
+node_modules/
+
+# Archivos de log
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+*.swp
+
+# Configuraciones de editores
+.vscode/
+.idea/
+
+# Archivos de compilación / salida
+dist/
+build/
+
+# Archivos de entorno (si tuvieras variables secretas)
+.env
+
+# Archivos de caché
+.cache/
