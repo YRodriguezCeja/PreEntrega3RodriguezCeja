@@ -156,6 +156,10 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background: url(../assets/img/temis-fondo.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 main {
@@ -163,10 +167,6 @@ main {
 }
 
 .section-intro{
-    background: url(../assets/img/temis-fondo.jpg) /* center/cover no-repeat */; /*modificar imagen para salga completa*/
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 60px 40px;
     display: flex;
     justify-content: center;
@@ -194,7 +194,7 @@ main {
             p{
                 font-family: $font-alt;
                 color: $color-dark;
-                font-size: 28px;
+                font-size: 30px;
                 margin:10px; 
                 padding: 10px;
                 text-align: justify;
@@ -218,7 +218,7 @@ main {
 .contenedor-img-texto, 
 .map{
     flex: 1 1 45%;
-    background: $color-grey;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
     padding: 20px;
     @include border-radius(12px);
     @include box-shadow();
@@ -240,7 +240,7 @@ main {
     p{
         font-size: 1.5rem;
         line-height: 1.6;
-        color: $color-gold;
+        color: $color-white;
     }
 }
 
@@ -320,7 +320,7 @@ main {
     box-shadow: $shadow-medium;
 
     .info-item {
-        background-color: $color-grey;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.377), rgba(30, 30, 30, 0.925));
         border-left: 6px solid $color-gold;
         padding: 1.5rem;
         border-radius: 0.75rem;
@@ -366,7 +366,7 @@ main {
     flex-wrap: wrap;
     gap: 1rem;
     align-items: flex-start;
-    background-color: $color-grey;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.281), rgba(30, 30, 30, 0.925));
     padding: 1.5rem;
     border-radius: 16px;
     box-shadow: $shadow-medium;
@@ -386,7 +386,7 @@ main {
         flex: 1 1 50%;
         font-size: 1.5rem;
         line-height: 1.6;
-        color:$color-gold;
+        color:$color-white;
     }
 }
 
@@ -396,7 +396,7 @@ main {
     gap: 1.5rem;
 
     .img-card {
-        background-color: $color-grey;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.205), rgba(30, 30, 30, 0.925));
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         overflow: hidden;
@@ -418,7 +418,7 @@ main {
             padding: 1rem;
             font-size: 0.95rem;
             line-height: 1.8;
-            color: $color-gold;
+            color: $color-white;
         }
     }
 }
@@ -438,7 +438,7 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
-    background-color: $color-grey;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.13), rgba(30, 30, 30, 0.938));
     padding: 1.5rem;
     border-radius: 16px;
     box-shadow: $shadow-light;
@@ -454,7 +454,7 @@ main {
         flex: 1;
         font-size: 1.5rem;
         line-height: 1.6;
-        color: $color-gold;
+        color: $color-white;
     }
 }
 
