@@ -153,13 +153,14 @@ body {
 /*SECCION PAGINA INDEX---------*/
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0px;
     display: flex;
     flex-direction: column;
     background: url(../assets/img/temis-fondo.jpg);
     background-size:cover;
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 main {
@@ -176,7 +177,7 @@ main {
 
     .intro-content{
         display: flex;
-        gap: 40px;
+        gap: 30px;
         background-color: rgba(255, 255, 255, 0.733);
         padding: 30px 10px 30px;
         margin: 30px 10px 30px;
@@ -194,7 +195,7 @@ main {
             p{
                 font-family: $font-alt;
                 color: $color-dark;
-                font-size: 30px;
+                font-size: 25px;
                 margin:10px; 
                 padding: 10px;
                 text-align: justify;
@@ -217,8 +218,8 @@ main {
 
 .contenedor-img-texto, 
 .map{
-    flex: 1 1 45%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
+    flex: 1 1 50%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.329), rgba(30, 30, 30, 0.925));
     padding: 20px;
     @include border-radius(12px);
     @include box-shadow();
@@ -255,10 +256,6 @@ main {
 /* ESTILO DEL FORMULARIO DE CONTACTO---------*/
 .formulario-contacto {
     form {
-        position: relative;
-        background-image: url(../assets/img/temis-fondo.jpg);
-        background-size: cover;
-        background-position: center;
         padding: 2.5rem 3rem;
         @include border-radius(20px);
         @include box-shadow(0,8px,20px, rgba(0,0,0,0.25));
@@ -267,7 +264,7 @@ main {
         gap: 1.2rem;
         color: #f5f5f5;
         font-family: $font-main;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.329), rgba(30, 30, 30, 0.925));
 
         * {
             position: relative;
@@ -276,7 +273,7 @@ main {
 
         h2 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 26px;
             margin-bottom: 0.8rem;
             font-weight: 700;
             letter-spacing: 1.2px;
@@ -287,7 +284,7 @@ main {
             font-weight: 600;
             color: $color-gold;
             letter-spacing: 0.03em;
-            font-size: 1.2rem;
+            font-size: 17px;
         }
 
         input,
@@ -298,7 +295,7 @@ main {
             border: none;
             @include border-radius(12px);
             padding: 0.9rem 1rem;
-            font-size: 1.3rem;
+            font-size: 16px;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
@@ -320,7 +317,7 @@ main {
     box-shadow: $shadow-medium;
 
     .info-item {
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.377), rgba(30, 30, 30, 0.925));
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.329), rgba(30, 30, 30, 0.877));
         border-left: 6px solid $color-gold;
         padding: 1.5rem;
         border-radius: 0.75rem;
@@ -342,13 +339,13 @@ main {
         h2 {
             margin-top: 0;
             color: $color-gold;
-            font-size: 1.8rem;
+            font-size: 26px;
             margin-bottom: 0.5rem;
         }
 
         p {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 18px;
             color: $color-white;
         }
     }
@@ -384,7 +381,7 @@ main {
 
     .texto-video {
         flex: 1 1 50%;
-        font-size: 1.5rem;
+        font-size: 18px;
         line-height: 1.6;
         color:$color-white;
     }
@@ -416,7 +413,7 @@ main {
 
         p {
             padding: 1rem;
-            font-size: 0.95rem;
+            font-size: 15px;
             line-height: 1.8;
             color: $color-white;
         }
@@ -438,7 +435,7 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.13), rgba(30, 30, 30, 0.938));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.329), rgba(30, 30, 30, 0.925));
     padding: 1.5rem;
     border-radius: 16px;
     box-shadow: $shadow-light;
@@ -452,7 +449,7 @@ main {
 
     .finiquito-texto {
         flex: 1;
-        font-size: 1.5rem;
+        font-size: 18PX;
         line-height: 1.6;
         color: $color-white;
     }
@@ -461,21 +458,18 @@ main {
 .formulario-finiquito {
     form {
         position: relative;
-        background-image: url(../assets/img/temis-fondo.jpg);
-        background-size: cover;
-        background-position: center;
         padding: 2.5rem 3rem;
         border-radius: 20px;
         box-shadow: $shadow-light;
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.041), rgba(30, 30, 30, 0.925));
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.329), rgba(30, 30, 30, 0.925));
         
             h2 {
             margin-top: 0;
-            font-size: 2.1rem;
-            color: $color-gold;
+            font-size: 26PX;
+            color: $color-white;
             text-align: center;
             }
 
@@ -483,7 +477,7 @@ main {
             font-weight: 600;
             margin-bottom: 0.3rem;
             color: $color-gold;
-            font-size: 1.5rem;
+            font-size: 17PX;
             }
 
             input,
