@@ -95,8 +95,11 @@ body {
 html, body {
   height: 100%;
   margin: 0px;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden; /* evita scroll horizontal */
   background: url(../assets/img/temis-fondo.jpg);
   background-size: cover;
   background-position: center;
@@ -146,8 +149,10 @@ main {
 }
 
 /*SECCION DE CONTACTO------------*/
-.info-despacho {
-  display: flex;
+.info-despacho .contenedor-img-texto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
   gap: 25px;
   align-items: stretch;
   flex-wrap: wrap;
@@ -187,6 +192,7 @@ main {
 .mapa iframe {
   width: 100%;
   height: 100%;
+  margin-top: 50px;
   min-height: 250px;
   border: none;
   border-radius: 12px;
@@ -280,7 +286,7 @@ main {
 .grid-event {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .video-texto {
@@ -294,16 +300,16 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .video-texto .video-container {
-  flex: 100%;
+  flex: 1 1 400px;
 }
 .video-texto .video-container iframe {
   width: 100%;
   height: 315px;
-  border-radius: 3px;
+  border-radius: 8px;
   border: none;
 }
 .video-texto .texto-video {
-  flex: 1 1 50%;
+  flex: 1 1 400px;
   font-size: 18px;
   line-height: 1.6;
   color: #ffffff;
@@ -443,6 +449,11 @@ footer h5 {
     display: none;
   }
 }
+@media (max-width: 576px) {
+  .navbar-brand {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .navbar .nav-list {
     gap: 10px;
@@ -451,7 +462,6 @@ footer h5 {
   .hero-image {
     max-width: 80%;
   }
-  .video-texto,
   .contenedor-img-texto,
   .info-despacho,
   .finiquito,
@@ -460,8 +470,6 @@ footer h5 {
   .navbar .nav-list {
     flex-direction: column;
   }
-  .texto-video,
-  .video-container,
   .contenedor-img-texto,
   .mapa {
     flex: 1 1 100%;
@@ -475,6 +483,34 @@ footer h5 {
   .formulario-contacto form,
   .formulario-finiquito form {
     padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) { /* responsivo de eventos el video*/
+  .video-texto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .video-texto .video-container iframe {
+    height: 400px;
+    width: 600px;
+  }
+  .texto-video {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .info-grid {
+    padding: 1rem;
+    grid-template-columns: 100%;
+  }
+  .info-item {
+    padding: 1rem;
   }
 }
 @media (max-width: 576px) {
