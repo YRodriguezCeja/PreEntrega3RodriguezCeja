@@ -40,7 +40,7 @@ body {
 
 /* FORMATO NAVBAR-------*/
 .navbar {
-  padding: 20px 40px;
+  padding: 0px 40px;
   background-color: #1c1c1c;
   color: #ffffff;
   border-bottom: 4px solid #b89f65;
@@ -93,11 +93,11 @@ body {
 
 /*SECCION PAGINA INDEX---------*/
 html, body {
-  height: 100%;
   margin: 0px;
   padding: 0;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /*evita que tega desborde en la parte de abaja del footer*/
   box-sizing: border-box;
   overflow-x: hidden; /* evita scroll horizontal */
   background: url(../assets/img/temis-fondo.jpg);
@@ -310,6 +310,7 @@ main {
 }
 .video-texto .texto-video {
   flex: 1 1 400px;
+  margin-top: 60px;
   font-size: 18px;
   line-height: 1.6;
   color: #ffffff;
@@ -339,7 +340,7 @@ main {
 }
 .galeria .img-card p {
   padding: 1rem;
-  font-size: 15px;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #ffffff;
 }
@@ -445,19 +446,13 @@ footer h5 {
 
 /*SECCION RESPONSIVA------------*/
 @media (max-width: 768px) {
-  .navbar-brand {
-    display: none;
-  }
-}
-@media (max-width: 576px) {
-  .navbar-brand {
-    display: none;
+  .titulo {
+    font-size: 1rem;
   }
 }
 @media (max-width: 768px) {
-  .navbar .nav-list {
+  .navbar {
     gap: 10px;
-    margin-top: 10px;
   }
   .hero-image {
     max-width: 80%;
@@ -466,8 +461,7 @@ footer h5 {
   .info-despacho,
   .finiquito,
   .header-container,
-  .hero-content,
-  .navbar .nav-list {
+  .hero-content {
     flex-direction: column;
   }
   .contenedor-img-texto,
@@ -497,11 +491,6 @@ footer h5 {
   }
   .texto-video {
     font-size: 16px;
-  }
-}
-@media (max-width: 992px) {
-  .navbar-brand {
-    display: none;
   }
 }
 @media (max-width: 576px) {
